@@ -1,0 +1,121 @@
+/* Outer container styling */
+.outer-container {
+    width: 90%; 
+    max-width: 1170px; 
+    padding: 40px 20px 40px 110px; /* Padding: top, right, bottom, left */
+    background: #3399CC;
+    border: 25px solid #063b71; 
+    box-sizing: border-box; /* Ensure that padding and border are included in the total size */
+    text-align:left ; 
+    margin: 0 auto; 
+    color: white;
+    text-align: left; 
+    font-family: 'Lucida Sans Unicode', sans-serif; 
+    font-size: 0.8vw; /*viewport width for responsive font size */
+    line-height: 1.5em; /* Dynamic line height */
+    opacity: 0.9; /*  partly transparency */ 
+  }
+  
+  .forecast-heading {
+    font-size: 1.2em; 
+  }
+  
+  .footer-text {
+    font-size: 0.9em; 
+  }
+  
+  /* Container styling */
+  .container {  
+    display: flex;
+    flex-wrap: wrap; /*Makes the cards wrap to the next line */
+    padding: 0%;
+    max-width: 90%; 
+    width: 1170px; 
+    height: 592px; 
+    margin: 0, auto;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans Unicode', sans-serif; 
+    font-size: 1.5vw; /*  viewport-width for responsive font size */
+    line-height: 1.5em; /* line-height*/
+    text-align: left; 
+  }
+  
+  /* First row */
+  .card-lisbon {
+    flex-basis: 49.83%; /* Lisbon takes up approximately 50% of the container's width */
+    height: 147px;/* Keep height */
+  }
+  
+  
+  .card-paris, .card-belgrade {
+    flex-basis: 24.91%; 
+    height: 147px;
+  }
+  
+  /* Second row */
+  .card-venice, .card-telaviv, .card-cairo, .card-newyork {
+    flex-basis: 24.91%; 
+    height: 147px; 
+  }
+  
+  /* Third row */
+  .card-newdelhi {
+    flex-basis: 24.91%; 
+    height: 147px; 
+  }
+  
+  .card-sanfrancisco {
+    flex-basis: 49.83%; 
+    height: 147px; 
+  }
+  
+  .card-tokyo {
+    flex-basis: 24.91%; 
+    height: 147px; 
+  }
+  
+  /* Fourth row */
+  .card-sydney {
+    flex-basis: 99.66%; 
+    height: 147px; 
+  }
+  /* Card styling */
+  .card {
+    border: 2px solid white;
+    text-align: center;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5em;
+    box-sizing: border-box;
+    font-size: 1.25vw; /* Responsive fontsize for the cards */
+    opacity: 0.9; /* partly transparency */
+    position: relative; 
+  }
+  
+  /* Hover-effect for venice card */
+  .card-venice:hover {
+    background-color: #FFCC00; 
+    color: black; /* change font color when hovering */
+  }
+  
+  .card-venice::before {
+    content: "🌤"; /* Original icon */
+    font-size: 2em;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  /* Colors for the city cards */
+  .card-lisbon { background-color: #56a5c6; }
+  .card-paris { background-color: #85e2d2; }
+  .card-belgrade { background-color:#996699; } 
+  .card-venice { background-color: #C24747; }
+  .card-telaviv { background: #E2674A;}
+  .card-cairo { background-color: #FFCC66;}
+  .card-newyork { background-color:#99CC99;}
+  .card-newdelhi { background-color:#669999;}
+  .card-sanfrancisco { background-color:#CC6699;}
+  .card-tokyo { background-color:#339966;}
+  .card-sydney{ background-color:#666699;}
+  
