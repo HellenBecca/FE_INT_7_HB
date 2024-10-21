@@ -49,6 +49,7 @@ button {
     display: inline-block;
     vertical-align: middle; 
     margin-right: 35px; /* Adds space between list items */
+    margin: 0;
 }
 
 .nav_list li:last-child {
@@ -117,6 +118,7 @@ button {
     font-weight: bold;
     color: #2F281E; 
     margin-bottom: 30px;
+    margin: 0;
 }
 
 .hero_desc {
@@ -126,6 +128,7 @@ button {
     width: 100%;
     max-width: 458px;
     margin-bottom: 45px;
+    margin: 0;
 }
 
 .btn-orange {
