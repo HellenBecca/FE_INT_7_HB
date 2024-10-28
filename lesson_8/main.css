@@ -1,0 +1,49 @@
+.btn-orange {
+  background-color: #FF9900;
+  color: #fff;
+  padding: 15px 40px;
+  border: 1px solid #BCD;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.btn-orange:hover {
+  transition: all 0.3s ease;
+  transform: scale(1.1);
+}
+
+.btn-accent {
+  background-color: #2F281E;
+  color: #fff;
+  padding: 15px 40px;
+  border: 1px solid #BCD;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.btn-accent:hover {
+  transition: all 0.3s ease;
+  transform: scale(1.1);
+}
+
+.navigation {
+  width: 65%;
+  text-align: right;
+  margin-right: 30px;
+}
+.navigation .nav_list {
+  margin: 0;
+}
+.navigation .nav_list li {
+  display: inline-block;
+  margin-right: 35px;
+}
+.navigation .nav_list li .nav_item:hover {
+  text-decoration: underline;
+}

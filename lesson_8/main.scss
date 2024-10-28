@@ -1,0 +1,75 @@
+// Variables for colors and common values
+$primary-color: #FF9900; // Used for buttons and accents
+$secondary-color: #2F281E; // Dark color for headers and text
+$text-color: #544837; // Color for smaller headers and descriptions
+$background-color: #FFFFFF; // Background color for sections
+$border-color: #BCD; // Standard border color
+
+// Variables for layout dimensions and spacing
+$container-width: 1121px;
+$max-width: 100%;
+$spacing-unit: 10px;
+$container-padding: 0 auto;
+$button-padding: 15px 40px;
+
+
+// Variables for transitions
+$transition-duration: 0.3s;
+$transition-timing: ease;
+
+// Mixin for button styles
+@mixin button($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 15px 40px;
+  border: 1px solid #BCD;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: capitalize;
+
+  // Hover state for buttons
+  &:hover {
+    transition: all $transition-duration $transition-timing;
+    transform: scale(1.1);
+  }
+}
+
+// Button styles using the button mixin
+.btn-orange {
+  @include button($primary-color, #fff);
+}
+
+.btn-accent {
+  @include button($secondary-color, #fff);
+}
+
+// Mixin for centering elements horizontally
+@mixin center-horizontal {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+// Navigation styling using nesting
+.navigation {
+  width: 65%;
+  text-align: right;
+  margin-right: 30px;
+
+  .nav_list {
+    margin: 0;
+
+    li {
+      display: inline-block;
+      margin-right: 35px;
+
+      // Hover effect for navigation items
+      .nav_item:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
