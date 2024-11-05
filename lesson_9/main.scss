@@ -3,19 +3,19 @@
 @font-face {
     font-family: "Poppins";
     font-weight: 400;
-    src: local("Poppins"), url("../fonts/poppins/Poppins-Regular.ttf") format("truetype"), url("../fonts/poppins/poppins-Regular.woff2") format("woff2"), url("../fonts/poppins/poppins-Regular.woff") format("woff");
+    src: local("Poppins"), url("./fonts/poppins/Poppins-Regular.ttf") format("truetype"), url("./fonts/poppins/poppins-Regular.woff2") format("woff2"), url("./fonts/poppins/poppins-Regular.woff") format("woff");
 }
 
 @font-face {
     font-family: "Poppins";
     font-weight: 500;
-    src: local("Poppins"), url("../fonts/poppins/Poppins-Semibold.ttf") format("truetype"), url("../fonts/poppins/poppins-Semibold.woff2") format("woff2"), url("../fonts/poppins/poppins-Semibold.woff") format("woff");
+    src: local("Poppins"), url("./fonts/poppins/Poppins-Semibold.ttf") format("truetype"), url("./fonts/poppins/poppins-Semibold.woff2") format("woff2"), url("./fonts/poppins/poppins-Semibold.woff") format("woff");
 }
 
 @font-face {
     font-family: "Poppins";
     font-weight: 700;
-    src: local("Poppins"), url("../fonts/poppins/Poppins-Bold.ttf") format("truetype"), url("../fonts/poppins/poppins-Bold.woff2") format("woff2"), url("../fonts/poppins/poppins-Bold.woff") format("woff");
+    src: local("Poppins"), url("./fonts/poppins/Poppins-Bold.ttf") format("truetype"), url("./fonts/poppins/poppins-Bold.woff2") format("woff2"), url("./fonts/poppins/poppins-Bold.woff") format("woff");
 }
 
 // Variable definition
