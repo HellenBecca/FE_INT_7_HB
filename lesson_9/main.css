@@ -1,3 +1,4 @@
+
 @font-face {
   font-family: "Poppins";
   font-weight: 400;
@@ -6,14 +7,13 @@
 @font-face {
   font-family: "Poppins";
   font-weight: 500;
-  src: local("Poppins"), url("./fonts/poppins/Poppins-Semibold.ttf") format("truetype"), url("./fonts/poppins/poppins-Semibold.woff2") format("woff2"), url("./fonts/poppins/poppins-Semibold.woff") format("woff");
+  src: local("Poppins"), url("./fonts/poppins/Poppins-SemiBold.ttf") format("truetype"), url("./fonts/poppins/poppins-SemiBold.woff2") format("woff2"), url("./fonts/poppins/poppins-SemiBold.woff") format("woff");
 }
 @font-face {
   font-family: "Poppins";
   font-weight: 700;
   src: local("Poppins"), url("./fonts/poppins/Poppins-Bold.ttf") format("truetype"), url("./fonts/poppins/poppins-Bold.woff2") format("woff2"), url("./fonts/poppins/poppins-Bold.woff") format("woff");
 }
-
 .paragraph-standard, .section_desc,
 .profession_desc,
 .box-text {
