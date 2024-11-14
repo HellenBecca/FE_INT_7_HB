@@ -1,0 +1,216 @@
+@charset "UTF-8";
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ba6fd3;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+  overflow-y: auto;
+  /* Ensures that the page can scroll vertically */
+}
+
+/* Heading and tyling */
+.birthday-card h1 {
+  font-size: 52px;
+  color: #2a0978;
+  text-align: center;
+}
+
+/* Main container styling */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Section styling */
+.birthday-card {
+  background-color: #ff69b4;
+  /* pink color on card*/
+  width: 500px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  /* Allows elements to stack vertically */
+}
+
+/* Styling of card*/
+.card-image {
+  width: 90%;
+  /* Adjust width */
+  height: auto;
+  /* keep proportions */
+  display: block;
+  margin: 10px auto;
+  /* Centers the image horizontally */
+}
+
+/* Box styling */
+.box {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  perspective: 1000px;
+  /* Adds depth for 3D effect */
+  background-color: #2a0978;
+  gap: 3px;
+  /* small gap*/
+  margin-top: 40px;
+  /* Adjust this to move the images below the text */
+}
+
+/* Left and right side styling */
+.left-side, .right-side {
+  width: 400px;
+  /* Half of the box width */
+  height: 500px;
+  background-color: #ff69b4;
+  transition: transform 0.5s ease;
+  /* Smooth opening effect */
+  transform-origin: left;
+  /* Reference point for rotation */
+}
+
+/* Right side pivot on the right edge */
+.right-side {
+  transform-origin: right;
+}
+
+/* Hover effect to "open" the card */
+.birthday-card:hover .left-side {
+  transform: rotateY(-120deg);
+  /* Rotates the left side outwards */
+}
+
+.birthday-card:hover .right-side {
+  transform: rotateY(120deg);
+  /* Rotates the right side outwards */
+}
+
+/* Animation settings för "heartBeat":This code creates an interactive birthday card 
+with an outward rotation effect on hover and a heartbeat animation that runs four times, each lasting 1.5 seconds */
+.animate__animated.animate__heartBeat {
+  display: inline-block;
+  animation: heartBeat;
+  /* heartBeat animation */
+  animation-duration: 1.5s;
+  /* duration*/
+  animation-iteration-count: 4;
+  /* loops 4 times */
+}
+
+.custom-button {
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 30px;
+  background-color: #fc72ca;
+  font-weight: bold;
+  font-size: 18px;
+  border: 1px solid;
+  border-radius: 25px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  /* small shadow effect */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+  background-color: #e83ba8;
+  /* color when hovering */
+  transform: scale(1.1);
+  /* Increase size to 110% */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  /* Smooth transition*/
+}
+
+.button-icon {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+}
+
+/* Text styling för meddelandet på lila delen */
+.message {
+  position: absolute;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font: italic 32px "Pacifico", Arial, sans-serif;
+  /* Kombinerar font-style, font-size och font-family */
+  color: #c294f3;
+}
+
+/* Text styling for the message on the purple section */
+.birthday-card:hover .message {
+  opacity: 1;
+  pointer-events: none;
+  /* Disable mouse interaction on the icon */
+}
+
+/* Styling for hand icon */
+.hand-icon {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: #2a0978;
+  display: flex;
+  align-items: center;
+  animation: pointerBounce 1s infinite;
+  /* Animation for pointing movement */
+  z-index: 10;
+  /* Ensures the icon is visible above other elements */
+  transition: opacity 0.3s ease;
+}
+
+.open-text {
+  font: normal 600 48px "Arial", sans-serif;
+  margin-right: 8px;
+  color: #2a0978;
+  z-index: 10;
+}
+
+/* Hide the icon when the card opens (on hover) */
+.birthday-card:hover .hand-icon {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Keyframes for pointer bounce animation */
+@keyframes pointerBounce {
+  0%, 100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -55%) rotate(-10deg);
+    /* Makes it "point" */
+  }
+}
