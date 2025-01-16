@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        /* Styling */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .card {
+            margin-top: 20px;
+        }
+
+        .card p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Weather App</h1>
+        <!-- Input field for the city -->
+        <input type="text" name="city" class="city" placeholder="Enter city">
+        <!-- Button to search for weather -->
+        <button class="button" onclick="searchWeather()">Search</button>
+        <!-- Section to display info about weather -->
+        <div class="card">
+            <p class="cityName"></p>
+            <p class="temperature"></p>
+        </div>
+    </div>
+
+    <script>
+        const API_KEY = '183a30543c984e5b8a5173931251101'; //  WeatherAPI key
+        const BASE_URL = 'https://api.weatherapi.com/v1/current.json'; // Endpoint for current weather, (/current.json)
+
+        async function fetchWeather(cityName) {
+            try {
+           
+                // Query parameters used in the API request:
+                // 1. key: My unique API key to authenticate the request.
+                // 2. q: Specifies the location to fetch weather data. 
+                // - city name (e.g., "Paris"), 
+                // - latitude/longitude, or a postal code.
+
+                const URL = `${BASE_URL}?key=${API_KEY}&q=${cityName}`;
+
+                // API call and waiting for the response
+                const response = await fetch(URL);
+
+                // Checking if response is OK
+                if (!response.ok) {
+                    throw new Error('City not found!');
+                }
+
+                // Parse JSON response
+                const data = await response.json();
+
+           
+                const weather = {
+                    city: data.location.name,
+                    temp: data.current.temp_c,
+                };
+
+          
+                renderWeatherData(weather);
+            } catch (err) {
+          
+                console.error(err);
+                document.querySelector('.temperature').textContent = 'Error: ' + err.message;
+            }
+        }
+
+        // Function to search for weather by button click
+        function searchWeather() {
+            // Get the city input from the user or default to "Paris"
+            const cityName = document.querySelector('.city').value || 'Paris';
+
+            // Call fetchWeather 
+            fetchWeather(cityName);
+        }
+
+        // Renders weather data on the page
+        function renderWeatherData(data) {
+     
+            const cityNameEl = document.querySelector('.cityName');
+            const tempEl = document.querySelector('.temperature');
+
+            // Update the elements with the weather data
+            cityNameEl.textContent = `City: ${data.city}`;
+            tempEl.textContent = `Current temp: ${Math.round(data.temp)}°C`;
+        }
+    </script>
+</body>
+
+</html>
