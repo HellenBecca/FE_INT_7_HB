@@ -1,0 +1,40 @@
+ // Styling for div 
+ #text-display {
+    border: 1px solid black; 
+    padding: 10px; 
+    background-color: #f6bfec; 
+    width: fit-content; // Adjust width to fit the text content
+    font-family: Arial, sans-serif; 
+  }
+  
+  /* Styling for text area */
+  textarea {
+    width: calc(100% - 20px); // Adjust width to the parent (minus padding)
+    padding: 10px; 
+    font-family: Arial, sans-serif; 
+  }
+  
+  #text-display {
+    margin-bottom: 20px; // div-elementet 
+}
+
+// Styling for Table
+table {
+    width: 100%;
+    border-collapse: collapse; // Remove spacing between cell borders
+  
+    th, td {
+      border: 1px solid #ccc; 
+      padding: 10px;         
+      text-align: left;       
+    }
+  
+    th {
+      cursor: pointer;          // clickable headings
+      background-color: #f2f2f2; 
+  
+      &:hover {
+        background-color: #e0e0e0; 
+      }
+    }
+  }
